@@ -1,0 +1,408 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Pyra Design System - Premium Luxury Fintech Theme */
+
+@layer base {
+  :root {
+    /* Pyra Premium Brand Colors (HSL) */
+    --bg: 0 0% 6%;
+    /* #0F0F0F - charcoal black */
+    --navy-700: 0 0% 8%;
+    /* #141414 - deeper charcoal */
+    --indigo: 45 100% 51%;
+    /* #FFD700 - bright gold for Nova */
+    --cyan: 224 0% 88%;
+    /* #E0E0E0 - clean silver for Prime */
+    --teal: 181 100% 39%;
+    /* #00C1C7 - professional teal for Spark */
+    --ink: 0 0% 100%;
+    /* #FFFFFF - pure white text */
+    --muted: 0 0% 90%;
+    /* #E5E5E5 - light gray for muted text */
+
+    /* Base System (Premium Dark-First) */
+    --background: var(--bg);
+    --foreground: var(--ink);
+
+    --card: 0 0% 8%;
+    --card-foreground: var(--ink);
+
+    --popover: var(--navy-700);
+    --popover-foreground: var(--ink);
+
+    --primary: var(--indigo);
+    --primary-foreground: 0 0% 6%;
+
+    --secondary: var(--navy-700);
+    --secondary-foreground: var(--ink);
+
+    --muted: var(--navy-700);
+    --muted-foreground: var(--muted);
+
+    --accent: var(--teal);
+    --accent-foreground: var(--bg);
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 12%;
+    --input: 0 0% 12%;
+    --ring: var(--indigo);
+
+    --radius: 1rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+}
+
+/* Pyra Premium Keyframe Animations */
+@keyframes gradientShift {
+
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes floatParticle {
+
+  0%,
+  100% {
+    transform: translateY(0) opacity(0.4);
+  }
+
+  50% {
+    transform: translateY(-10px) opacity(0.8);
+  }
+}
+
+@keyframes rise {
+  0% {
+    transform: translateY(12px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes sheen {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes neumorphicGlow {
+
+  0%,
+  100% {
+    box-shadow:
+      20px 20px 60px rgba(0, 0, 0, 0.5),
+      -20px -20px 60px rgba(255, 255, 255, 0.05);
+  }
+
+  50% {
+    box-shadow:
+      25px 25px 70px rgba(0, 0, 0, 0.6),
+      -25px -25px 70px rgba(255, 255, 255, 0.08);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-['Inter'];
+    background-color: #0F0F0F;
+    /* Fallback for charcoal black */
+    color: #FFFFFF;
+    /* Fallback for white text */
+  }
+
+  html {
+    background-color: #0F0F0F;
+    /* Ensure html also has the background */
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-['Playfair_Display'];
+  }
+
+  /* Reveal Animation Trigger */
+  [data-inview="false"] {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  [data-inview="true"] {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+
+  /* Staggered animations for child elements */
+  [data-inview="true"]>* {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  [data-inview="true"]>*:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+
+  [data-inview="true"]>*:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+
+  [data-inview="true"]>*:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+
+  [data-inview="true"]>*:nth-child(4) {
+    animation-delay: 0.4s;
+  }
+
+  [data-inview="true"]>*:nth-child(5) {
+    animation-delay: 0.5s;
+  }
+
+  [data-inview="true"]>*:nth-child(6) {
+    animation-delay: 0.6s;
+  }
+}
+
+@layer components {
+
+  /* Premium Gradient Utilities */
+  .bg-gradient-deep {
+    background: linear-gradient(135deg, hsl(var(--bg)), hsl(var(--navy-700)));
+  }
+
+  .bg-accent-gradient {
+    background: linear-gradient(135deg, hsl(var(--indigo)), hsl(var(--teal)));
+    background-size: 200% 200%;
+    animation: gradientShift 4s ease-in-out infinite;
+  }
+
+  .bg-premium-glass {
+    @apply backdrop-blur-xl bg-white/5 border border-white/10;
+    box-shadow:
+      0 8px 32px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+
+  .bg-neumorphic {
+    background: hsl(var(--card));
+    box-shadow:
+      20px 20px 60px rgba(0, 0, 0, 0.5),
+      -20px -20px 60px rgba(255, 255, 255, 0.05);
+    animation: neumorphicGlow 4s ease-in-out infinite;
+  }
+
+  .bg-neumorphic-inset {
+    background: hsl(var(--card));
+    box-shadow:
+      inset 20px 20px 60px rgba(0, 0, 0, 0.5),
+      inset -20px -20px 60px rgba(255, 255, 255, 0.05);
+  }
+
+  /* Button Premium Effects */
+  .btn-premium {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, hsl(var(--indigo)), hsl(var(--teal)));
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow:
+      0 8px 32px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+
+  .btn-premium::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+  }
+
+  .btn-premium:hover::before {
+    left: 100%;
+  }
+
+  /* Premium Text Gradients */
+  .text-gradient-premium {
+    color: hsl(var(--ink));
+  }
+
+  .text-gradient-nova {
+    color: hsl(var(--indigo));
+  }
+
+  .text-gradient-prime {
+    color: hsl(var(--cyan));
+  }
+
+  .text-gradient-spark {
+    color: hsl(var(--teal));
+  }
+
+  /* Premium Triangle Particles */
+  .triangle-particle-premium {
+    width: 0;
+    height: 0;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-bottom: 6px solid hsl(var(--indigo) / 0.6);
+    animation: floatParticle 8s ease-in-out infinite;
+  }
+
+  /* Premium Clip Paths */
+  .clip-triangle {
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  }
+
+  .clip-hexagon {
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  }
+
+  /* Premium Borders and Dividers */
+  .border-premium {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  }
+
+  .divider-premium {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  }
+
+  /* Animation Classes */
+  .animate-slide-in-left {
+    animation: slideInLeft 0.8s ease-out forwards;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.8s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.6s ease-out forwards;
+  }
+
+  /* Enhanced Hover Effects */
+  .hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  }
+
+  .hover-glow {
+    transition: box-shadow 0.3s ease;
+  }
+
+  .hover-glow:hover {
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+  }
+}
+
+/* Reduced Motion Preferences */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

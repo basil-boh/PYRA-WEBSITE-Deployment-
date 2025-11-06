@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Test</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #000;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        .video-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        video {
+            width: 100%;
+            height: auto;
+            border: 2px solid #333;
+        }
+
+        .info {
+            margin-top: 20px;
+            padding: 20px;
+            background: #333;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="video-container">
+        <h1>Video Test</h1>
+        <p>Testing if hero-background.mp4 loads correctly:</p>
+
+        <video controls autoplay muted loop playsinline>
+            <source src="/hero-background.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <div class="info">
+            <h3>Video Information:</h3>
+            <p><strong>Source:</strong> /hero-background.mp4</p>
+            <p><strong>File Size:</strong> 5.4MB</p>
+            <p><strong>Format:</strong> MP4 (ISO Media)</p>
+            <p><strong>Attributes:</strong> autoplay, muted, loop, playsinline</p>
+        </div>
+
+        <div class="info">
+            <h3>Troubleshooting:</h3>
+            <p>1. If you see the video above, the file is working</p>
+            <p>2. If you see an error, check the browser console</p>
+            <p>3. Make sure the file is in the public/ directory</p>
+        </div>
+    </div>
+</body>
+
+</html>
