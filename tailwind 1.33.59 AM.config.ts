@@ -32,7 +32,7 @@ export default {
 				'pyra-cyan': 'hsl(var(--cyan))',
 				'pyra-teal': 'hsl(var(--teal))',
 				'pyra-ink': 'hsl(var(--ink))',
-				'pyra-muted': 'hsl(var(--ink))',
+				'pyra-muted': 'hsl(var(--muted))',
 
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
