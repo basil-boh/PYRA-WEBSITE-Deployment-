@@ -436,10 +436,6 @@ export function Home({ onOpenWaitlist }: HomeProps) {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <div className="inline-flex items-center space-x-3 bg-gradient-to-r from-indigo-500/20 to-cyan-500/20 rounded-full px-6 py-3 mb-8 border border-indigo-400/30">
-              <div className="w-2 h-2 bg-gradient-to-r from-indigo-400 to-cyan-400 rounded-full"></div>
-              <span className="text-indigo-300 text-sm font-medium">Core Features</span>
-            </div>
             <motion.h2
               className="font-heading text-5xl md:text-6xl font-bold text-white mb-8"
               initial={{ opacity: 0, y: 20 }}
