@@ -177,13 +177,13 @@ export default function Contact({ onOpenWaitlist }: ContactProps) {
                   {
                     icon: Mail,
                     title: 'Email',
-                    content: 'pyrapayments@gmail.com',
+                    content: 'contact@pyra.sg',
                     description: 'For general inquiries and partnerships'
                   },
                   {
                     icon: Phone,
                     title: 'Phone',
-                    content: '+65 9643 6337',
+                    content: '+65 8074 4518',
                     description: 'Available during business hours (SGT)'
                   },
                 ].map((contact, index) => (
