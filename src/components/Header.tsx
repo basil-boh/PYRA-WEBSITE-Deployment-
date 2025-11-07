@@ -15,6 +15,7 @@ export default function Header({ onOpenWaitlist }: HeaderProps) {
   const navItems = [
     { href: '/', label: 'Home' },
     { href: '/about', label: 'About' },
+    { href: '/articles', label: 'Articles' },
     { href: '/contact', label: 'Contact' }
   ];
 

@@ -8,6 +8,8 @@ import Product from './pages/Product';
 import Clubs from './pages/Clubs';
 import Careers from './pages/Careers';
 import Blog from './pages/Blog';
+import Articles from './pages/Articles';
+import ArticleDetail from './pages/ArticleDetail';
 import Contact from './pages/Contact';
 import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
@@ -32,6 +34,8 @@ function App() {
             <Route path="/clubs" element={<Clubs />} />
             <Route path="/careers" element={<Careers />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/articles" element={<Articles />} />
+            <Route path="/articles/:id" element={<ArticleDetail />} />
             <Route path="/contact" element={<Contact onOpenWaitlist={onOpenWaitlist} />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
