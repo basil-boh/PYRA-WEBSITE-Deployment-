@@ -147,7 +147,7 @@ export function Home({ onOpenWaitlist }: HomeProps) {
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
               {[
-                "Built", "on", "trust", "Driven", "by", "progress"
+                "Built", "on", "trust.", "Driven", "by", "progress"
               ].map((word, index) => (
                 <motion.span
                   key={index}
@@ -176,7 +176,7 @@ export function Home({ onOpenWaitlist }: HomeProps) {
               transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
             >
               {[
-                "PYRA", "celebrates", "the", "art", "of", "financial", "discipline", "turning", "every", "act", "of", "discipline,", "into", "access", "and", "every", "moment", "of", "consistency", "into", "privilege.",
+                "PYRA", "celebrates", "the", "art", "of", "financial", "discipline,", "turning", "every", "act", "of", "discipline", "into", "access", "and", "every", "moment", "of", "consistency", "into", "privilege.",
               ].map((word, index) => (
                 <motion.span
                   key={index}
