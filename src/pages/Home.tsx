@@ -147,7 +147,7 @@ export function Home({ onOpenWaitlist }: HomeProps) {
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
               {[
-                "Built", "on", "trust.", "Driven", "by", "progress"
+                "Built", "on", "trust.", "Driven", "by", "progress."
               ].map((word, index) => (
                 <motion.span
                   key={index}
